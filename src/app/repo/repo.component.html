@@ -1,1 +1,12 @@
-<p>repo works!</p>
+<app-navbar></app-navbar>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title"><strong> Github Repositories</strong></h5>
+    <div class="panel-heading" *ngFor="let repo of repos">
+      <div class="clearfix">
+        {{ repo.name }}<br />
+        <a href="{{ repo.html_url }}" class="btn btn-sm btn-info pull-right">view this project on github</a >
+      </div>
+    </div>
+  </div>
+</div>
