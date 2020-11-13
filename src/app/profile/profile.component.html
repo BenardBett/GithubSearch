@@ -1,1 +1,39 @@
-<p>profile works!</p>
+<form action="" class="container" >
+    <div class="form-group">
+      <app-navbar></app-navbar>
+      <input type="text" class="form-control" placeholder="search user with username" [(ngModel)]="username"name="username"(keyup)="findProfile()"/>
+    </div>
+  </form>
+  
+<div class="container">
+     <div *ngIf="profile" class="card-group">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title"><strong>PROFILE</strong></h2>
+          <img class="card-img-top" src="{{ profile.avatar_url }}"responsive/>
+          <div>
+            <b>Name:</b> {{ profile.name }}<br /><strong>Username:</strong><small>{{ profile.login }}</small>
+          </div>
+          <div *ngIf="profile.email">
+            <a href="email to:{{ profile.email }}" {{profile.email}}></a>
+          </div>
+          <div><b>Lives in</b> {{ profile.location }}.</div>
+          <div *ngIf="profile.bio"><b>Bio:</b> {{ profile.bio }}</div>
+          <div><b>Number of repositories:</b> {{ profile.public_repos }}</div>
+          <div *ngIf="profile.hireable">Available for hire></div>
+  
+          <p><a href="{{ profile.html_url }}" target="blank" class="btn btn-primary">View profile on Github</a></p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><strong>REPOSITORIES</strong></h5>
+          <div class="panel-heading" *ngFor="let repo of repos">
+            <div class="clearfix">
+              {{ repo.name }}<br /><a href="{{ repo.html_url }}" class="btn btn-sm btn-info pull-right">View this project on github</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

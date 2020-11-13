@@ -1,0 +1,21 @@
+
+.container{
+    background-color:darkkhaki; 
+    padding-top: 10px;
+}
+.card-group{
+    display: flex;
+}
+.card{
+    background-color:darkkhaki; 
+    padding-top: 10px;
+}
+.card-body{
+    float: right;
+}
+.card-img-top{
+    border-radius: 100%;
+     width: 15em;
+     height: 15em;
+     float: left
+}
