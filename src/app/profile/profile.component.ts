@@ -1,4 +1,3 @@
-
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Profile } from '../profile';
 import { GithubService } from '../github.service';
@@ -11,12 +10,12 @@ import {User } from '../user';
 export class ProfileComponent  implements OnInit {
   @Output() findProfile = new EventEmitter<any>();
   UserName: string;
-  
+
   constructor( private githubservice: GithubService){
   }
  getProfile() {
     this.findProfile.emit(this.UserName);
-   
+
     this.UserName; 
   }
   ngOnInit(): void {
