@@ -5,7 +5,7 @@
         <div class="col-md-6">
             <img style="border-radius: 50px;" src="{{profile.avatar_url}}" alt="">
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6" style="background-color: darkgoldenrod;">
             <h2 >Profile Info</h2>
             <p> <span>Name:</span>
                 {{profile.name}}
@@ -34,7 +34,7 @@
     <div class="container" style="text-align: center;">
         <div class="row" >
             <div class="col-md-6" *ngFor="let user of user">
-                <div class="card mt-3">
+                <div class="card mt-3" style="background-color: darkgoldenrod;">
                     <p class="text-center pt-4 para">
                         {{user.name}}
                     </p>
@@ -49,7 +49,7 @@
                         {{user.created_at}}
                     </p>
                     <div class="card-footer text-center">
-                        <a href="{{ user.html_url }}" class="btn btn-success" target="_blank">View  this project on GitHub</a>
+                        <a href="{{ user.html_url }}" class="btn btn-success" target="_blank">View  this projecton GitHub</a>
                     </div>
                 </div>
             </div>
